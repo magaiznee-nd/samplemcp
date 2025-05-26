@@ -1,0 +1,64 @@
+{
+  "tools": [
+    {
+      "name": "health",
+      "description": "Service status check",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_weather",
+      "description": "Provides current weather and forecast for a specific city.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "description": "City name to check the weather for"
+          },
+          "country_code": {
+            "type": "string",
+            "description": "Country code (e.g., 'US', 'UK')"
+          },
+          "days": {
+            "type": "integer",
+            "description": "Number of days for the forecast",
+            "default": 3,
+            "minimum": 1,
+            "maximum": 7
+          },
+          "api_key": {
+            "type": "string",
+            "description": "Weather API key (uses default if not provided)"
+          }
+        },
+        "required": ["city"]
+      }
+    },
+    {
+      "name": "get_air_quality",
+      "description": "Provides air quality information for a specific city.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "description": "City name to check air quality for"
+          },
+          "country_code": {
+            "type": "string",
+            "description": "Country code (e.g., 'US', 'UK')"
+          },
+          "api_key": {
+            "type": "string",
+            "description": "Air quality API key (uses default if not provided)"
+          }
+        },
+        "required": ["city"]
+      }
+    }
+  ]
+}
